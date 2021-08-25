@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating room form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <form th:action="@{/room/new}"
+                      th:object="${room}" method="post">
+                    <div class="form-row">
+                        <div class=" form-group">
+                            <td><label>Room Name</label></td>
+                            <td><input type="text" class="form-control" required="required" th:field="*{roomName}"></td>
+                        </div>
+                        <br>
+                        <div class="form-group col-md-2 ">
+                            <td><select class="btn btn-primary dropdown-toggle" th:field="*{country}">
+                                <option th:each="country : ${allCountries}"
+                                        th:value="${country.id}"
+                                        th:text="${country.countryName}">
+                                </option>
+                            </select></td>
+                        </div>
+                        <div class="col-md-6 form-group">
+                        </div>
+                        <br>
+                        <td>
+                            <button type="submit" class="btn btn-success btn-block mt-3">Create room</button>
+                        </td>
+                    </div>
+                    <td>
+                        <div class="col-md-8">
+                            <a class="btn btn-primary " th:href="@{/}">Back to the main page</a>
+                        </div>
+                    </td>
+                </form>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Change light status</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="col-md-4">
+        <form th:action="@{/edit/{id}(id=${room.id})}"
+              th:object="${room}" th:method="PATCH">
+            <table border="0">
+                <input type="hidden" th:field="*{id}" value="${id}" id="id"/>
+                <input type="hidden" th:field="*{roomName}" value="${roomName}"/>
+                <input type="hidden" th:field="*{country}" value="${country}"/>
+                <div th:object="${room}">
+                    <table class="table">
+                        <td>Country name</td>
+                        <td>:</td>
+                        <td th:text="${room.country}"></td>
+                        <br>
+                        <div>
+                            <form th:object="${room}">
+                                <tr>
+                                    <td>Light Status</td>
+                                    <td>:</td>
+                                    <td th:text="${room.light}" id="lights"></td>
+                                    <input type="radio" th:field="*{light}" value="0"/> Off
+                                    <input type="radio" th:field="*{light}" value="1"/> On
+                                    <br><br>
+                                    <input type="submit" class="btn btn-success" id="lightButton" value="Submit">
+                                    <br><br>
+                            </form>
+                        </div>
+                    </table>
+                </div>
+            </table>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function autoReload() {
+        setTimeout(function () {
+            var roomId = document.getElementById("id").value;
+            $.ajax({
+                url: '' + roomId,
+                cache: false,
+                success: function (data) {
+                    $("#lights").load(" #lights");
+                }
+            });
+
+            autoReload();
+        }, 4000);
+    }
+
+    autoReload();
+
+</script>
+</body>
+</html>

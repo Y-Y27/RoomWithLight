@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All rooms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> All rooms </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <tr th:each="room : ${allRooms}">
+                    <td th:text="${room.id}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${room.id})}" th:utext="${room.roomName}">...</a>
+                    </td>
+                    <td th:text="${room.country}"></td>
+                    <td th:text="${room.light}"></td>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <a class="btn btn-primary" th:href="@{/room/new}"> Create room </a>
+    </div>
+    <br><br>
+    <div class="col-md-8">
+        <a class="btn btn-primary " th:href="@{/}">Back to the main page</a>
+    </div>
+</div>
+</body>
+</html>
