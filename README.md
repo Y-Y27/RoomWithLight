@@ -2,7 +2,7 @@
 
 ## Room with light
 
-#### This is a WEB application that represents the room interaction interface
+#### This is a WEB application that presents the room interaction interface
 
 
 ### Task Description: 
@@ -20,15 +20,15 @@
 
 | Role     | Available actions                  
 | -------- |---------------------------       
-| `USER`   | Create a new room         
-|          | Display a list of rooms 
-|          | Display details of room and edit light status 
+| `USER`   | Create a new room            
+|          | Display a list of rooms
+|          | Display details of room and edit light status
 
 #### There are the following pages in the system:
 
 | Page               | URL               | Description                                  | Available actions                   
-| ------------       |------------------ | -----------------------------------------    | ---------------------------------------------------    
-| `Main page`        | */*               | Main page                                    | Login to the system
+| --------------     |------------------ | -----------------------------------------    | ---------------------------------------------------    
+| `MainPage`         | */*               | Main page                                    | Create room or watch list of all rooms
 | `List`             | */room/allRooms*  | List of rooms                                | Display list of all rooms
 | `Edit`             | */edit/{id}*      | Viewing details of the room and edit room    | Change light status
 | `New`              | */room/new*       | Creating a new room                          | Creating a room from a list of available countries
@@ -41,3 +41,4 @@
 - Jquery
 - Maven
 - Docker
+
