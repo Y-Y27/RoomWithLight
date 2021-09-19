@@ -2,7 +2,7 @@
 
 ## Room with light
 
-#### This is a WEB application that presents the room interaction interface
+#### This is a WEB application that represents the room interaction interface
 
 
 ### Task Description: 
