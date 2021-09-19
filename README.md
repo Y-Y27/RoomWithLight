@@ -20,9 +20,9 @@
 
 | Role     | Available actions                  
 | -------- |---------------------------       
-| `USER`   | Authorization (Login)              
-|          | Display a list of rooms (List)
-|          | Display details of room, that (View)
+| `USER`   | Create a new room         
+|          | Display a list of rooms 
+|          | Display details of room and edit light status 
 
 #### There are the following pages in the system:
 
