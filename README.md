@@ -1,5 +1,9 @@
-# RoomWithLight
-#### *Junior hometask*
+## Junior hometask
+
+## Room with light
+
+#### This is a WEB application that presents the room interaction interface
+
 
 ### Task Description: 
 - The user can create a room from a list of countries and view a list of rooms created by other users.
@@ -12,4 +16,28 @@
 
 - Changing the state of the light bulb should be displayed to all users in the room without reloading the page as soon as possible
 
+##### The system supports the following role model:
 
+| Role     | Available actions                  
+| -------- |---------------------------       
+| `USER`   | Authorization (Login)              
+|          | Display a list of rooms (List)
+|          | Display details of room, that (View)
+
+#### There are the following pages in the system:
+
+| Page               | URL               | Description                                  | Available actions                   
+| ------------       |------------------ | -----------------------------------------    | ---------------------------------------------------    
+| `Main page`        | */*               | Main page                                    | Login to the system
+| `List`             | */room/allRooms*  | List of rooms                                | Display list of all rooms
+| `Edit`             | */edit/{id}*      | Viewing details of the room and edit room    | Change light status
+| `New`              | */room/new*       | Creating a new room                          | Creating a room from a list of available countries
+
+### Tech stack:
+- Java 8
+- Spring (Spring Boot, Spring MVC, Spring Data, Spring Security)
+- PostgreSQL 
+- Thymeleaf
+- Jquery
+- Maven
+- Docker
